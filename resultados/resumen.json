@@ -1,0 +1,237 @@
+{
+  "entorno": {
+    "python": "3.13.7",
+    "sistema": "Windows-11-10.0.26100-SP0",
+    "procesador": "Intel64 Family 6 Model 154 Stepping 4, GenuineIntel"
+  },
+  "corpus": {
+    "articulos": 20,
+    "tokens": 3995,
+    "terminos_validos": 2493,
+    "n": 981,
+    "f_min": 1,
+    "f_max": 86,
+    "k": 86,
+    "terminos_frecuencia_1": 588
+  },
+  "tiempos_ms": {
+    "Counting Sort": {
+      "media": 0.1885564,
+      "mediana": 0.177,
+      "minimo": 0.1697,
+      "maximo": 0.3942,
+      "desv": 0.03424481030909957,
+      "correcto": true
+    },
+    "Radix Sort": {
+      "media": 0.3746582,
+      "mediana": 0.3535,
+      "minimo": 0.343,
+      "maximo": 0.8037,
+      "desv": 0.07061386910359436,
+      "correcto": true
+    },
+    "Bucket Sort": {
+      "media": 0.3805856,
+      "mediana": 0.3102,
+      "minimo": 0.2996,
+      "maximo": 1.4169,
+      "desv": 0.1413986941029798,
+      "correcto": true
+    }
+  },
+  "repeticiones": 500,
+  "rankings_identicos": true,
+  "operaciones": {
+    "parametros": {
+      "n": 981,
+      "k": 86,
+      "d": 2,
+      "b": 10,
+      "m": 981,
+      "c": 26
+    },
+    "Counting Sort": {
+      "formula": "5n + 2k",
+      "reemplazo": "5(981) + 2(86)",
+      "total": 5077,
+      "razon_predicha": 1.0,
+      "razon_medida": 1.0,
+      "ns_por_operacion": 34.86310813472523
+    },
+    "Radix Sort": {
+      "formula": "3n + d(4n + 2b)",
+      "reemplazo": "3(981) + 2(4(981) + 2(10))",
+      "total": 10831,
+      "razon_predicha": 2.1333464644475084,
+      "razon_medida": 1.997175141242938,
+      "ns_por_operacion": 32.63779891053458
+    },
+    "Bucket Sort": {
+      "formula": "4n + m + (n − c)",
+      "reemplazo": "4(981) + 981 + (981 − 26)",
+      "total": 5860,
+      "razon_predicha": 1.1542249359858183,
+      "razon_medida": 1.7525423728813558,
+      "ns_por_operacion": 52.93515358361775
+    }
+  },
+  "escalabilidad": {
+    "filas": [
+      {
+        "factor": 1,
+        "n": 981,
+        "esperado_lineal": 1.0,
+        "esperado_nlogn": 1.0,
+        "esperado_cuadratico": 1.0,
+        "Counting Sort": 0.1749,
+        "Radix Sort": 0.3431,
+        "Bucket Sort": 0.3027
+      },
+      {
+        "factor": 2,
+        "n": 1962,
+        "esperado_lineal": 2.0,
+        "esperado_nlogn": 2.2012455220957867,
+        "esperado_cuadratico": 4.0,
+        "Counting Sort": 0.3413,
+        "Radix Sort": 0.7118,
+        "Bucket Sort": 0.6114
+      },
+      {
+        "factor": 4,
+        "n": 3924,
+        "esperado_lineal": 4.0,
+        "esperado_nlogn": 4.804982088383148,
+        "esperado_cuadratico": 16.0,
+        "Counting Sort": 0.713,
+        "Radix Sort": 1.4197,
+        "Bucket Sort": 1.2067
+      },
+      {
+        "factor": 8,
+        "n": 7848,
+        "esperado_lineal": 8.0,
+        "esperado_nlogn": 10.414946265149442,
+        "esperado_cuadratico": 64.0,
+        "Counting Sort": 1.3627,
+        "Radix Sort": 2.7895,
+        "Bucket Sort": 2.4218
+      },
+      {
+        "factor": 16,
+        "n": 15696,
+        "esperado_lineal": 16.0,
+        "esperado_nlogn": 22.439856707065182,
+        "esperado_cuadratico": 256.0,
+        "Counting Sort": 2.7708,
+        "Radix Sort": 5.848,
+        "Bucket Sort": 4.9789
+      }
+    ],
+    "ajustes": {
+      "Counting Sort": {
+        "pendiente_ms_por_elemento": 0.00017602704065414928,
+        "intercepto_ms": 0.0019083333333334007,
+        "r2": 0.9997942292047157,
+        "crecimiento_medido": 15.842195540308747,
+        "ns_por_elemento": [
+          178.2874617737003,
+          173.95514780835882,
+          181.70234454638125,
+          173.63659531090724,
+          176.5290519877676
+        ]
+      },
+      "Radix Sort": {
+        "pendiente_ms_por_elemento": 0.0003729083774511416,
+        "intercepto_ms": -0.0456833333333333,
+        "r2": 0.9994381467938752,
+        "crecimiento_medido": 17.044593412999124,
+        "ns_por_elemento": [
+          349.74515800203875,
+          362.79306829765545,
+          361.79918450560655,
+          355.440876656473,
+          372.579001019368
+        ]
+      },
+      "Bucket Sort": {
+        "pendiente_ms_por_elemento": 0.000317564642179913,
+        "intercepto_ms": -0.027191666666666503,
+        "r2": 0.9997877784732149,
+        "crecimiento_medido": 16.44829864552362,
+        "ns_por_elemento": [
+          308.56269113149847,
+          311.62079510703364,
+          307.5178389398573,
+          308.5881753312946,
+          317.20820591233434
+        ]
+      }
+    },
+    "repeticiones": 100
+  },
+  "top15": [
+    [
+      "ai",
+      86
+    ],
+    [
+      "education",
+      57
+    ],
+    [
+      "research",
+      46
+    ],
+    [
+      "learning",
+      40
+    ],
+    [
+      "aied",
+      38
+    ],
+    [
+      "review",
+      36
+    ],
+    [
+      "educational",
+      33
+    ],
+    [
+      "assessment",
+      32
+    ],
+    [
+      "intelligence",
+      23
+    ],
+    [
+      "artificial",
+      22
+    ],
+    [
+      "studies",
+      21
+    ],
+    [
+      "higher",
+      16
+    ],
+    [
+      "literature",
+      15
+    ],
+    [
+      "study",
+      15
+    ],
+    [
+      "systematic",
+      15
+    ]
+  ]
+}
